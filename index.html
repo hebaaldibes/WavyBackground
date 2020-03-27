@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wavy Background</title>
+</head>
+<style type="text/css">
+	body
+	{
+		margin: 0;
+		padding: 0;
+	}
+	section
+	{
+		position: absolute;
+		width: 100%;
+		height: 100vh;
+		background: url('img/bg.jpg');
+		background-size: cover;
+		background-attachment: fixed;
+	}
+	section h2{
+		width: 100%;
+		text-align: center;
+		line-height: 400px;
+		letter-spacing: 5px;
+		color: #fff;
+		font-family: sans-serif;
+		font-size: 40px;
+
+	}
+	section .wave
+	{
+		position: absolute;
+		width: 100%;
+		height: 143px;
+		bottom: 0;
+		left: 0;
+		background: url(img/wave.png);
+		animation: animate 10s linear infinite;
+	}
+	section .wave:before 
+	{
+	    content: "";
+		background: url(img/wave.png);
+		width: 100%;
+		position: absolute;
+		height: 143px;
+		top: 0;
+		left: 0;
+		opacity: 0.6;
+		animation-delay: 5s;
+		animation: animate_reverse 10s linear infinite;
+	}
+	section .wave:after 
+	{
+	    content: "";
+		background: url(img/wave.png);
+		width: 100%;
+		position: absolute;
+		height: 143px;
+		top: 0;
+		left: 0;
+		opacity: 0.4;
+		animation: animate 20s linear infinite;
+	}
+	@keyframes animate{
+		0%{
+			background-position: 0;
+		} 
+		100%{
+			background-position: 1360px;
+		} 
+	}
+		@keyframes animate_reverse{
+		0%{
+			background-position: 1360px;
+		} 
+		100%{
+			background-position: 0;
+		} 
+	}
+</style>
+<body>
+	<section>
+		<h2>Wavy Background Anmation</h2>
+		<div class="wave"></div>
+	</section>
+</body>
+</html>
